@@ -114,7 +114,7 @@ function uploadVideo() {
     );
     repeat.style.display = "none";
     uploadButtons.style.display = "none";
-    alert("UPLOAD!!!");
+    //alert("UPLOAD!!!");
     cGif.style.display = "block";
     repeat.style.display = "block";
     videoScreen.style.display = "none";
@@ -169,7 +169,7 @@ async function copy() {
     await navigator.clipboard.writeText(
         "https://giphy.com/gifs/" + idToSave.data.id
     );
-    alert("enlace copiado");
+    //alert("enlace copiado");
 }
 
 function download() {
@@ -182,5 +182,5 @@ function whileChange() {
     setTimeout(function chageToEnd() {
         uVideo.style.display = "none";
         cGif.style.visibility = "visible";
-    }, 300000);
+    }, 3000);
 }
