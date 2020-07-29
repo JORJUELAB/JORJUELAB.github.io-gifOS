@@ -2,7 +2,7 @@
 
 //Trends
 
-const path = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`;
+const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`;
 
 function setEvenMouse(id) {
     //console.log(id);
