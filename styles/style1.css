@@ -15,7 +15,7 @@ header{
   letter-spacing: 0;
 }
 #logo{
-  content: url(/assets/gifOF_logo.png);  
+  content: url(./assets/gifOF_logo.png);  
 }
 #m{
   text-decoration: underline;
@@ -173,7 +173,7 @@ header{
 }
 .search-change img{
   margin-right: 5%;
-  background-image: url(/assets/lupa.svg);
+  background-image: url(./assets/lupa.svg);
 }
 
 
@@ -427,5 +427,5 @@ header{
 }
 .change1 img{
   margin-right: 5%;
-  background-image: url(/assets/lupa.svg);
+  background-image: url(./assets/lupa.svg);
 }
