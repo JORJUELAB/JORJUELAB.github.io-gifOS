@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/upload.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/animation.css" />
+    <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap" rel="stylesheet" />
+    <title>GifOs</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <p>
+                ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
+            </p>
+        </header>
+        <article>
+            <section id="top-section">
+                <div id="top-arrow">
+                    <a href="/index.html"><img src="/assets/arrow.svg" alt="back-arrow" id="arrow" /></a>
+                </div>
+                <div>
+                    <a href="/index.html"><img src="/assets/gifOF_logo.png" alt="logo" id="logo" /></a>
+                </div>
+            </section>
+            <section id="create-gif">
+                <div>
+                    <h2>Crear Gifos</h2>
+                </div>
+                <div id="start">
+                    <h3>
+                        <img src="/assets/window.png" alt="window"/> Aquí podrás crear tus propios guifos
+                    </h3>
+                    <br>
+                    <p id="text">
+                        Crear tu <strong>guifo</strong> es muy fácil, graba cualquier imagen con tu cámara y obtén
+                        guifos personalizados. Los pasos para crear tu guifo son:<br><br>
+                        <strong>1)</strong> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)<br>
+                        <strong>2)</strong> Capturar tu momento guifo<br>
+                        <strong>3)</strong> Revisar el momento<br>
+                        <strong>4)</strong> Listo para subir y compartir! <br><br> ¿Quieres comenzar a crear tu
+                        <strong>guifo</strong> ahora?<br><br>
+                    </p>
+                </div>
+                <div class="buttons" id="beginCancel">
+                    <button id="cancel-button" class="cancel-button"
+                        onclick="window.location.href='/index.html'">Cancelar</button>
+                    <button id="start-button" class="button">
+                        Comenzar
+                    </button>
+                </div>
+            </section>
+            <section id="start-gif">
+                <div class="title">
+                    <h2 id="trytitle">Un Chequeo Antes de Empezar</h2><img src="/assets/close.svg" alt="close" class="close">
+                </div>
+                <div class="video">
+                    <video id="video" autoplay></video>
+                </div>
+                <img class="video" id="repeat" src="" alt=""/>
+                <div class="buttons" id="capturar">
+                    <div id="cameraContainer"><img src="/assets/camera.svg" alt="camera" id="camera">
+                    </div>
+                    <button id="btn-start-recording" class="button">Capturar</button>
+                </div>
+                <div class="buttons" id="stopDiv">
+                    
+                    <div id="recordingContainer"><img src="/assets/recording.svg" alt="recording" id="recording"><button
+                            id="btn-stop-recording" disabled>
+                            Listo
+                        </button>
+                    </div>
+                    <div id="gifUploadDiv">
+                        <button id="upload-gif" class="button">Subir Guifo</button>
+                        <button id="repeatCapture" class="cancel-button">Repetir captura</button>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <section id="finishedGif">
+            <div class="title">
+                <h2>Guifo Subido Con Éxito</h2><img src="/assets/close.svg" alt="close" class="close">
+            </div>
+            <div class="rightContent">
+                <div class="finalImg">
+                    <img class="videoFinished" id="uploadedGif"  src="" alt=""/>
+                </div>
+                <div class="finalButtons">
+                    <h4>Guifo creado con exito</h4>
+                    <button id='copyLink' class="cancel-button">
+                        Copiar Enlace Guifo
+                    </button>
+                    <button id='download' class="cancel-button" >
+                        Descargar guifo
+                    </button>
+                </div>
+            </div>
+            <div class="buttons">
+                <button  class="button"  onclick="window.location.href='/upload.html'">
+                    Listo
+                </button>
+            </div>
+        </section>
+        <section id="uploadVideo">
+            <div class="title">
+                <h2>Subiendo Guifo</h2><img src="/assets/close.svg" alt="close" class="close">
+            </div>
+            <div id="boxCapture">
+                    <img id="world" src="/assets/globe_img.png" alt="globe">
+                    <div class="uploadText">
+                        <h5>Estamos subiendo tu guifo…</h5>
+                        <h6>Tiempo restante: <del>38 años</del> algunos minutos</h6>
+                    </div>
+                    <div id="barLoader">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span> <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+            </div>
+                <div class="allButtonCapture">
+                    <button class="cancel-button" id="final-cancel" onclick="window.location.href='/upload.html'">Cancelar</button>
+                </div>
+        </section>
+        <section id="misGifos">
+            <div class="results-container">
+                <div class="section-tittle">
+                    <p>Mis guifos</p>
+                </div>
+                <br>
+                <div id="misGifos-results"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/script/upload.js"></script>
+    <script src="/script/misGuifos.js"></script>
+</body>
+
+</html>
