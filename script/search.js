@@ -13,7 +13,7 @@ function outButton(){
 
 
 const apiKey = 'lCIxyIpyjzmnIETV0Z1M6WMnWOtsdeH3';
-const URL = 'http://api.giphy.com/v1/gifs/search?q=';
+const URL = 'https://api.giphy.com/v1/gifs/search?q=';
 
 const searchForm = document.getElementById('search-form');
 const searchUser = document.getElementById('search-input');
@@ -67,7 +67,7 @@ searchUser.addEventListener('keyup', function () {
 
    
 
-    fetch(`http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q="${input}"&limit=3`, requestOptions)
+    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q="${input}"&limit=3`, requestOptions)
 
         .then((response) => {
 
@@ -122,7 +122,7 @@ function searchButtons() {
         redirect: 'follow'
     };
 
-    fetch(`http://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q="${input}"&limit=3`, requestOptions)
+    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q="${input}"&limit=3`, requestOptions)
 
         .then((response) => {
 
