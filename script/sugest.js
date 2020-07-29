@@ -14,7 +14,7 @@ function getComponentSuggestGift(url, id, height, tittle) {
     `;
 }
 
-const path_s = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4&offset=30`;
+const path_s = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4&offset=30`;
 
 function getSuggestResults() {
 
@@ -44,7 +44,7 @@ getSuggestResults();
 
 function alerta(title) {
 
-    const sURL = `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${title}`;
+    const sURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${title}`;
     fetch(sURL).then(function (res) {
         return res.json()
     }).then(function (json) {
