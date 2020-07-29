@@ -15,7 +15,7 @@ header{
   letter-spacing: 0;
 }
 #logo{
-  content: url(/assets/gifOF_logo_dark.png);  
+  content: url(./assets/gifOF_logo_dark.png);  
 }
 body{
   background: #110038;
@@ -178,7 +178,7 @@ label img{
 }
 .search-change img{
   margin-right: 5%;
-  background-image: url(/assets/lupa_light.svg);
+  background-image: url(./assets/lupa_light.svg);
 }
 
 #main-search h2{
@@ -435,5 +435,5 @@ label img{
 }
 .change1 img{
   margin-right: 5%;
-  background-image: url(/assets/lupa_light.svg);
+  background-image: url(./assets/lupa_light.svg);
 }
