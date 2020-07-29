@@ -261,8 +261,8 @@ h4{
   position: absolute;
   right: 0;
   width: 9rem;
-  height: 2.45rem;
-  margin-top: -2.08rem;
+  height: 2.35rem;
+  margin-top: -1.91rem;
 }
 .button:hover, #cameraContainer:hover,#btn-stop-recording:hover,  #recordingContainer:hover{
   cursor: pointer;
