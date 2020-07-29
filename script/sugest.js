@@ -8,7 +8,7 @@ function getComponentSuggestGift(url, id, height, tittle) {
          <div class="suggest-gifs">
             <img src = "${url}" class = "suggest-item" height = "${height}" alt="${tittle}">
             <figcaption  id = "${id}" style ="display : block" class="suggest-titles">${tittle}</figcaption>  
-            <img class ="close" alt = "close-image" src ="/assets/close.svg">
+            <img class ="close" alt = "close-image" src ="./assets/close.svg">
             <button type="submit" onClick = "alerta('${tittle}')" class="more-button">Ver más…</button>
          </div>       
     `;
