@@ -162,7 +162,7 @@ label img{
   line-height: 18px;
 }
 .search-button img{
-  content: url(/assets/combined_shape.svg);
+  content: url(./assets/combined_shape.svg);
   margin-right: 5%;
 } 
 .search-change{
