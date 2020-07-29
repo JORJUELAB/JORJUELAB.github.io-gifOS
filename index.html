@@ -17,7 +17,7 @@
 	<main>
 		<article>
 			<section class="buttons-section">
-				<a href="/index.html"><img src="/assets/gifOF_logo.png" alt="logo" id="logo"></a>
+				<a href="/index.html"><img src="./assets/gifOF_logo.png" alt="logo" id="logo"></a>
 				<div class=buttons>
 					<form action="upload.html">
 						<input type="submit" value="Crear Guifos" class="button" id="button1">
@@ -30,9 +30,9 @@
 						<label for="btn-menu"><i class="fas fa-caret-down" id="dropdown"></i></label>
 						<nav class="menu">
 							<ul>
-								<li><a href="#" onclick="cambiarArchivoCss('/styles/style1.css');"><span
+								<li><a href="#" onclick="cambiarArchivoCss('./styles/style1.css');"><span
 											class="under1">S</span>aylor Day</a></li>
-								<li><a href="#" onclick="cambiarArchivoCss('/styles/style2.css');"><span
+								<li><a href="#" onclick="cambiarArchivoCss('./styles/style2.css');"><span
 											class="under2">S</span>aylor Night</a></li>
 							</ul>
 						</nav>
@@ -48,7 +48,7 @@
 						<label>
 							<input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" id="search-input" autocomplete="off"> 
 						</label>
-						<button type="submit"  id="search-button" class="search-button"  onmouseover = "onButton();" onmouseout ="outButton()"><img id="lens" alt="lents" src="/assets/lupa_inactive.svg"/>Buscar</button>
+						<button type="submit"  id="search-button" class="search-button"  onmouseover = "onButton();" onmouseout ="outButton()"><img id="lens" alt="lents" src="./assets/lupa_inactive.svg"/>Buscar</button>
 						<div id="searchSuggestions">
 						</div>
 					</form>
@@ -85,9 +85,9 @@
 			</section>
 		</article>
 	</main>
-	<script src="script/search.js"></script>
-	<script src="script/trends.js"></script>
-	<script src="script/sugest.js"></script>
+	<script src="./script/search.js"></script>
+	<script src="./script/trends.js"></script>
+	<script src="./script/sugest.js"></script>
 </body>
 
 </html>
