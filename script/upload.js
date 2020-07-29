@@ -182,5 +182,5 @@ function whileChange() {
     setTimeout(function chageToEnd() {
         uVideo.style.display = "none";
         cGif.style.visibility = "visible";
-    }, 3000);
+    }, 300000);
 }
