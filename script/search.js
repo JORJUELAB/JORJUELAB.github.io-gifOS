@@ -50,7 +50,7 @@ function getSearchResults(search) {
                 const height = element.images.fixed_height.height;
                 resultsHTML += getComponentGift(url, element.id, height, element.title, width);
             });
-
+            searchButtons();
             resultsEl.innerHTML = resultsHTML;
 
         }).catch(function (error) {
