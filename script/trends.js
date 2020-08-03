@@ -2,7 +2,7 @@
 
 //Trends
 
-const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25`;
+const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24`;
 
 function setEvenMouse(id) {
     //console.log(id);
@@ -14,14 +14,7 @@ function setOutMouse(id) {
     txtTitle.style.display = "none";
 
 }
-function getComponentGift(url, id, height, tittle, width) {
-    return `
-         <div class = "caja">
-            <img src = "${url}" onmouseover = "setEvenMouse('${id}')" onmouseout ="setOutMouse('${id}')" class = "item-trend" height = "${height}" alt="${tittle}" width = "${width}">
-            <figcaption  id = "${id}" style ="display : none" class="gif-titles">${tittle}</figcaption>   
-         </div>       
-    `;
-}
+
 function getTrendResults() {
     fetch(path).then((response) => {
         return response.json()
@@ -29,6 +22,14 @@ function getTrendResults() {
         //console.log(json.data[0].images.fixed_width.url);
         //console.log(json.data[0].title);
 
+        function getComponentGift(url, id, height, tittle, width) {
+            return `
+                 <div class = "try">
+                    <img src = "${url}" onmouseover = "setEvenMouse('${id}')" onmouseout ="setOutMouse('${id}')" class = "item-trend" height = "${height}" alt="${tittle}" width = "${width}">
+                    <figcaption  id = "${id}" style ="display : none" class="gif-titles">${tittle}</figcaption>   
+                 </div>       
+            `;
+        }
         const resultsEl = document.getElementById('trend-image');
 
         let resultsHTML = '';
