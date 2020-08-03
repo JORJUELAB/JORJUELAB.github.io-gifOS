@@ -11,6 +11,14 @@ function outButton(){
     document.getElementById("search-button").classList.replace("search-change", "change1");
 }
 
+function getComponentGift(url, id, height, tittle, width) {
+    return `
+         <div class = "caja">
+            <img src = "${url}" onmouseover = "setEvenMouse('${id}')" onmouseout ="setOutMouse('${id}')" class = "item-trend" height = "${height}" alt="${tittle}" width = "${width}">
+            <figcaption  id = "${id}" style ="display : none" class="gif-titles">${tittle}</figcaption>   
+         </div>       
+    `;
+}
 
 const apiKey = 'lCIxyIpyjzmnIETV0Z1M6WMnWOtsdeH3';
 const URL = 'https://api.giphy.com/v1/gifs/search?q=';
@@ -24,7 +32,6 @@ searchForm.addEventListener('submit', function (e) {
     getSearchResults(search)
 });
 
-
 function getSearchResults(search) {
 
     fetch(URL + search + '&api_key=' + apiKey)
@@ -33,6 +40,7 @@ function getSearchResults(search) {
         }).then(data => {
             //console.log(data.data[0].images.fixed_width.url);
             let resultsHTML = '';
+            let prueba ='';
 
             data.data.forEach(element => {
                 //console.log(element);
