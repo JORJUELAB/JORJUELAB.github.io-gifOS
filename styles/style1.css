@@ -279,9 +279,18 @@ header{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  -webkit-text-size-adjust: 100%;
   margin-top: 2rem;
+  width:100%;
 }
+.try{
+  width: 24%;
+  position: relative;
+  padding-top: 1rem;
+}
+.item-trend{
+  width: 100%;
+}
+
 .item-trend:hover{
   cursor: pointer;
   outline: white 3px ridge;
