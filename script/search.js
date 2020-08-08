@@ -20,6 +20,14 @@ function getComponentGift(url, id, height, tittle, width) {
     `;
 }
 
+function trytitle(){
+    const titleEL = document.getElementById('ensayo');
+    const search = searchUser.value;
+    let titleHTML = "";
+    titleHTML +=  `<input type="text" class="section-tittle" value="Resultado de búesqueda para: ${search}" disabled="disabled">`;
+    titleEL.innerHTML = titleHTML;
+}
+
 const apiKey = 'lCIxyIpyjzmnIETV0Z1M6WMnWOtsdeH3';
 const URL = 'https://api.giphy.com/v1/gifs/search?q=';
 
@@ -28,23 +36,26 @@ const searchUser = document.getElementById('search-input');
 const resultsEl = document.getElementById('search-results');
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
-    const search = searchUser.value
+    const search = searchUser.value;
     getSearchResults(search)
 });
 
 function getSearchResults(search) {
 
+    searchUser.value = search;
+    console.log(search);
+    console.log(searchUser);
     fetch(URL + search + '&api_key=' + apiKey)
         .then((response) => {
             return response.json()
         }).then(data => {
             //console.log(data.data[0].images.fixed_width.url);
             let resultsHTML = '';
-            let prueba ='';
+            trytitle();
 
             data.data.forEach(element => {
                 //console.log(element);
-                console.log(element.id)
+               // console.log(element.id)
                 const url = element.images.fixed_height.url;
                 const width = element.images.width;
                 const height = element.images.fixed_height.height;
@@ -70,11 +81,7 @@ searchUser.addEventListener('keyup', function () {
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
-        
     };
-
-   
-
     fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q="${input}"&limit=3`, requestOptions)
 
         .then((response) => {
@@ -82,15 +89,14 @@ searchUser.addEventListener('keyup', function () {
             return response.json();
         }).then(function (data) {
 
-            const prueba = document.getElementById("searchSuggestions");
-            let prueba1 = "";
+            const greybuttonsDiv = document.getElementById("searchSuggestions");
+            let greybuttons = "";
             data.data.forEach(function (obj) {
                 //console.log(obj.name)
-                prueba1 +=
-                    `<button class="button-searchSuggestions" onclick = "getSuggestSearch('${obj.name}')">${obj.name}</button>`;
+                greybuttons +=
+                    `<button id="prueba" class="button-searchSuggestions" onclick = "getSuggestSearch('${obj.name}')">${obj.name}</button>`;
             })
-            prueba.innerHTML = prueba1;
-
+            greybuttonsDiv.innerHTML = greybuttons;
         }).catch(function (error) {
             console.log(error.message)
         })
@@ -103,8 +109,9 @@ function getSuggestSearch (search) {
         .then((response) => {
             return response.json()
         }).then(data => {
-            console.log(data.data[0].images.fixed_width.url);
+            //console.log(data.data[0].images.fixed_width.url);
             let resultsHTML = '';
+           
 
             data.data.forEach(element => {
                 
@@ -114,7 +121,8 @@ function getSuggestSearch (search) {
                 const height = element.images.fixed_height.height;
                 resultsHTML += getComponentGift(url, element.id, height, element.title, width);
             });
-            searchButtons();
+            
+            //searchButtons();
             resultsEl.innerHTML = resultsHTML;
         }).catch(function (error) {
             return error
@@ -137,15 +145,17 @@ function searchButtons() {
             return response.json();
         }).then(function (data) {
 
-            const xprueba = document.getElementById("masbotones");
+            const bluebuttonsDiv = document.getElementById("bluebuttons");
             
-            let prueba5 = "";
+            let bluebuttons = "";
             data.data.forEach(function (obj) {
-                console.log(obj.name)
-                prueba5 +=
+                let title = obj.name;
+                //console.log(obj.name)
+                bluebuttons +=
                     `<button class="otrosbotones" onclick = "getSuggestSearch('${obj.name}')">${obj.name}</button>`;
-            })
-            xprueba.innerHTML = prueba5;
+                    console.log(title);
+            })          
+            bluebuttonsDiv.innerHTML = bluebuttons;
 
         }).catch(function (error) {
             console.log(error.message)
