@@ -17,15 +17,22 @@ function getComponentGift(url, id, height, tittle, width) {
             <img src = "${url}" onmouseover = "setEvenMouse('${id}')" onmouseout ="setOutMouse('${id}')" class = "item-trend" height = "${height}" alt="${tittle}" width = "${width}">
             <figcaption  id = "${id}" style ="display : none" class="gif-titles">${tittle}</figcaption>   
          </div>       
-    `;
+    `;  
 }
 
-function trytitle(){
+function trytitle(search){
     const titleEL = document.getElementById('ensayo');
-    const search = searchUser.value;
-    let titleHTML = "";
-    titleHTML +=  `<input type="text" class="section-tittle" value="Resultado de búesqueda para: ${search}" disabled="disabled">`;
-    titleEL.innerHTML = titleHTML;
+    if(!search) {
+        const search = searchUser.value;
+        let titleHTML = "";
+        titleHTML +=  `<input type="text" class="section-tittle" value="Resultado de búesqueda para: ${search}" disabled="disabled">`;
+        titleEL.innerHTML = titleHTML;
+    } else {
+        let titleHTML = "";
+        titleHTML +=  `<input type="text" class="section-tittle" value="Resultado de búesqueda para: ${search}" disabled="disabled">`;
+        titleEL.innerHTML = titleHTML;
+    }
+
 }
 
 const apiKey = 'lCIxyIpyjzmnIETV0Z1M6WMnWOtsdeH3';
@@ -37,7 +44,8 @@ const resultsEl = document.getElementById('search-results');
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
     const search = searchUser.value;
-    getSearchResults(search)
+    getSearchResults(search);
+    trytitle(search);
 });
 
 function getSearchResults(search) {
@@ -51,8 +59,6 @@ function getSearchResults(search) {
         }).then(data => {
             //console.log(data.data[0].images.fixed_width.url);
             let resultsHTML = '';
-            trytitle();
-
             data.data.forEach(element => {
                 //console.log(element);
                // console.log(element.id)
@@ -68,6 +74,7 @@ function getSearchResults(search) {
             return error
         });
 }
+
 searchUser.addEventListener('keyup', function () {
     let button = document.getElementById("search-button");
     button.classList.replace("search-button", "change1");
@@ -101,10 +108,9 @@ searchUser.addEventListener('keyup', function () {
             console.log(error.message)
         })
 })
-
 function getSuggestSearch (search) {
     document.getElementById("searchSuggestions").style.visibility = "hidden";
-
+    console.log(search);
     fetch(URL + search + '&api_key=' + apiKey)
         .then((response) => {
             return response.json()
@@ -112,7 +118,6 @@ function getSuggestSearch (search) {
             //console.log(data.data[0].images.fixed_width.url);
             let resultsHTML = '';
            
-
             data.data.forEach(element => {
                 
                 //console.log(element.title)
@@ -123,12 +128,13 @@ function getSuggestSearch (search) {
             });
             
             //searchButtons();
+            trytitle(search);
+
             resultsEl.innerHTML = resultsHTML;
         }).catch(function (error) {
             return error
         });
 }
-
 function searchButtons() {
     
     const input = searchUser.value;
