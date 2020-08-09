@@ -41,9 +41,11 @@ const URL = 'https://api.giphy.com/v1/gifs/search?q=';
 const searchForm = document.getElementById('search-form');
 const searchUser = document.getElementById('search-input');
 const resultsEl = document.getElementById('search-results');
+const buttonsDiv = document.getElementById('searchSuggestions');
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
     const search = searchUser.value;
+    buttonsDiv.style.display = 'none';
     getSearchResults(search);
     trytitle(search);
 });
@@ -76,6 +78,7 @@ function getSearchResults(search) {
 }
 
 searchUser.addEventListener('keyup', function () {
+    buttonsDiv.style.display = 'block';
     let button = document.getElementById("search-button");
     button.classList.replace("search-button", "change1");
     searchUser.style.color = ("#110038");
@@ -109,6 +112,7 @@ searchUser.addEventListener('keyup', function () {
         })
 })
 function getSuggestSearch (search) {
+    buttonsDiv.style.display = 'none';
     document.getElementById("searchSuggestions").style.visibility = "hidden";
     console.log(search);
     fetch(URL + search + '&api_key=' + apiKey)
@@ -136,6 +140,7 @@ function getSuggestSearch (search) {
         });
 }
 function searchButtons() {
+    buttonsDiv.style.display = 'none';
     
     const input = searchUser.value;
   
@@ -167,4 +172,3 @@ function searchButtons() {
             console.log(error.message)
         })
 }
-
