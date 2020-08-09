@@ -101,7 +101,7 @@ searchUser.addEventListener('keyup', function () {
             data.data.forEach(function (obj) {
                 //console.log(obj.name)
                 greybuttons +=
-                    `<button id="prueba" class="button-searchSuggestions" onclick = "getSuggestSearch('${obj.name}')">${obj.name}</button>`;
+                    `<button class="button-searchSuggestions" onclick = "getSuggestSearch('${obj.name}')">${obj.name}</button>`;
             })
             greybuttonsDiv.innerHTML = greybuttons;
         }).catch(function (error) {
@@ -167,3 +167,4 @@ function searchButtons() {
             console.log(error.message)
         })
 }
+
